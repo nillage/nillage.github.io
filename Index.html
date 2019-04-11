@@ -68,7 +68,6 @@
             background: #faf;
         }
         .header_title>.title_bottom{
-
         }
         .header>.header_right{
             order:3;
@@ -76,7 +75,6 @@
             text-align: center;
             background: #eee;
         }
-
         .box{
             border: 5px solid #000;
             display: flex;
@@ -105,43 +103,43 @@
     </style>
 </head>
 <body>
-    <div class="header">
-        <div class="header_left">返回</div>
-        <div class="header_title">
-            <div class="title_bottom">flex布局</div>
-            <div class="title_top">
-                <div id="timer" class="top_left"></div>
-                <div class="top_middle">登录</div>
-                <div class="top_right">注册</div>
-            </div>
-        </div>
-        <div class="header_right">下载APP</div>
-    </div>
-    <div class="box">
-        <div class="left_nav">
-            <ul>
-                <li>第一行</li>
-                <li>第二行</li>
-                <li>第三行</li>
-                <li>第四行</li>
-                <li>第五行</li>
-                <li>第六行</li>
-            </ul>
-        </div>
-        <div class="box_content">
-			将html直接拖入桌面创建的 io文件夹里面 就可以commit 上传到github.io
+<div class="header">
+    <div class="header_left">返回</div>
+    <div class="header_title">
+        <div class="title_bottom">flex布局</div>
+        <div class="title_top">
+            <div id="timer" class="top_left"></div>
+            <div class="top_middle">登录</div>
+            <div class="top_right">注册</div>
         </div>
     </div>
+    <div class="header_right">下载APP</div>
+</div>
+<div class="box">
+    <div class="left_nav">
+        <ul>
+            <li>第一行</li>
+            <li>第二行</li>
+            <li>第三行</li>
+            <li>第四行</li>
+            <li>第五行</li>
+            <li>第六行</li>
+        </ul>
+    </div>
+    <div class="box_content">
+        将html直接拖入桌面创建的 io文件夹里面 就可以commit 上传到github.io
+    </div>
+</div>
 </body>
-    <script>
-        let nowTime = new Date();
-        let y = nowTime.getFullYear();
-        let M = nowTime.getMonth()-1;
-        let d = nowTime.getDate();
-        let h = nowTime.getHours();
-        let m = nowTime.getMinutes();
-        let s = nowTime.getSeconds();
-        let headerTopLeft = document.getElementById("timer");
-        headerTopLeft.innerHTML = y  + "-" + M  + "-" + d  + " " + h  + ":" + m  + ":" + s;
-    </script>
+<script>
+    let nowTime = new Date();
+    let y = nowTime.getFullYear();
+    let M = nowTime.getMonth()-1;
+    let d = nowTime.getDate();
+    let h = nowTime.getHours();
+    let m = nowTime.getMinutes();
+    let s = nowTime.getSeconds();
+    let headerTopLeft = document.getElementById("timer");
+    headerTopLeft.innerHTML = y  + "-" + M  + "-" + d  + " " + h  + ":" + m  + ":" + s;
+</script>
 </html>
