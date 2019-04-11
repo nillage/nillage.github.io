@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的github.io作品</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .header{
+            display: flex;
+            width: 100%;
+            height: 50px;
+            /*flex-direction: column-reverse;*/
+            /*flex-wrap: wrap-reverse;*/
+            flex-flow: row nowrap;
+            justify-content: space-around;/* flex-start  flex-end center space-between*/
+            align-items: center;
+            /*align-content: flex-start | flex-end | center | baseline | stretch;*/
+        }
+        .header>.header_left{
+            order:1;
+            /*flex-grow: 1;!* 默认为0 即使有剩余空间也不放大*!
+            flex-shrink: 2;!* 定义了项目的缩放比例 默认为1  即如果空间不足 改项目缩小*!
+            flex-basis: 100px; !*默认是auto  即项目的本来大小*!*/
+            flex:auto;/* auto(1 1 auto)  none(0 0 auto)*/
+            /*align-self: auto | flex-start | flex-end | center | baseline | stretch;  与主轴垂直的方向对齐方式 可以覆盖容器的align-item*/
+            text-align: center;
+            background: #f1f1f1;
+        }
+        .header>.header_title{
+            order:2;
+            flex-grow: 3;
+            align-self: center;
+            background: #ccc;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: center;
+        }
+        .header_title>.title_bottom{
+            text-align: center;
+            font-size: 18px;
+        }
+        .header_title>.title_top{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            text-align: center;
+        }
+        .title_top>.top_left{
+            order:1;
+            flex:3 1 auto;
+            background: #ffa;
+        }
+        .title_top>.top_middle{
+            order:2;
+            flex: auto;
+            background: #aaf;
+        }
+        .title_top>.top_right{
+            order:3;
+            flex: auto;
+            background: #faf;
+        }
+        .header_title>.title_bottom{
+
+        }
+        .header>.header_right{
+            order:3;
+            flex-grow: 1;
+            text-align: center;
+            background: #eee;
+        }
+
+        .box{
+            border: 5px solid #000;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+        .box>.left_nav{
+            /*flex-grow: 1;*//* 如果加了flex-grow 其宽度也会随着屏幕缩放 */
+            flex-shrink: 0;
+            flex-basis: 200px;
+            border-right: 1px solid #f00;
+            background: #afa;
+        }
+        .left_nav li{
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+        .box>.box_content{
+            /*flex:5 1 auto;*/
+            flex-grow: 5;
+            flex-shrink: 1;
+            flex-basis: auto;
+            background: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header_left">返回</div>
+        <div class="header_title">
+            <div class="title_bottom">flex布局</div>
+            <div class="title_top">
+                <div id="timer" class="top_left"></div>
+                <div class="top_middle">登录</div>
+                <div class="top_right">注册</div>
+            </div>
+        </div>
+        <div class="header_right">下载APP</div>
+    </div>
+    <div class="box">
+        <div class="left_nav">
+            <ul>
+                <li>第一行</li>
+                <li>第二行</li>
+                <li>第三行</li>
+                <li>第四行</li>
+                <li>第五行</li>
+                <li>第六行</li>
+            </ul>
+        </div>
+        <div class="box_content">
+
+        </div>
+    </div>
+</body>
+    <script>
+        let nowTime = new Date();
+        let y = nowTime.getFullYear();
+        let M = nowTime.getMonth()-1;
+        let d = nowTime.getDate();
+        let h = nowTime.getHours();
+        let m = nowTime.getMinutes();
+        let s = nowTime.getSeconds();
+        let headerTopLeft = document.getElementById("timer");
+        headerTopLeft.innerHTML = y  + "-" + M  + "-" + d  + " " + h  + ":" + m  + ":" + s;
+    </script>
+</html>
